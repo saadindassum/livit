@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>335623137735-9m5ei0rqsink9ocdh98ihu73cn99nos3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.335623137735-9m5ei0rqsink9ocdh98ihu73cn99nos3</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC11ed9Qem4HxjtZqNCoquDD7wzxxEtwyA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>335623137735</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.livit</string>
+	<key>PROJECT_ID</key>
+	<string>livit-dassumluo</string>
+	<key>STORAGE_BUCKET</key>
+	<string>livit-dassumluo.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:335623137735:ios:875754526fe24e234011e2</string>
+</dict>
+</plist>

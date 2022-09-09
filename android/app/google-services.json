@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "335623137735",
+    "project_id": "livit-dassumluo",
+    "storage_bucket": "livit-dassumluo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335623137735:android:460813ee0bc5db514011e2",
+        "android_client_info": {
+          "package_name": "com.example.livit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "335623137735-7n8i1eq1qlkrdvkimuj0u7n0ua3mumd3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBplw5Ry2uEsGynib_ZjXoyU3Gk_KXXpdo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "335623137735-7n8i1eq1qlkrdvkimuj0u7n0ua3mumd3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "335623137735-9m5ei0rqsink9ocdh98ihu73cn99nos3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.livit"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
