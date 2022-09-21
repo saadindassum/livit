@@ -1,3 +1,5 @@
+// main screen user sees after logging in
+// contains contents that suits user the most
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:livit/utils/colors.dart';
