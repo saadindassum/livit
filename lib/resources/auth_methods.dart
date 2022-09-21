@@ -32,7 +32,8 @@ class AuthMethods {
       if (username.isNotEmpty &&
           email.isNotEmpty &&
           password.isNotEmpty &&
-          bio.isNotEmpty) {
+          bio.isNotEmpty &&
+          file != null) {
         // register user
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
           email: email,
@@ -43,18 +44,15 @@ class AuthMethods {
         // if user has selected image upload that
         // else use default image
         String photoUrl;
-        if (file != null) {
+        if (file == null) {
+          photoUrl =
+              'https://i1.sndcdn.com/avatars-46GF1rag02JyR6y8-zIUu6w-t500x500.jpg';
+        } else {
           photoUrl = await StorageMethods()
               .uploadImageToStorage('profilePics', file, false);
-        } else {
-          file =
-              'https://i1.sndcdn.com/avatars-46GF1rag02JyR6y8-zIUu6w-t500x500.jpg'
-                  as Uint8List?;
-          photoUrl = await StorageMethods()
-              .uploadImageToStorage('profilePics', file!, false);
         }
 
-        // sex gifs... yea delete it if above works
+        // delete if above works
         // String photoUrl = await StorageMethods()
         //     .uploadImageToStorage('profilePics', file, false);
 
