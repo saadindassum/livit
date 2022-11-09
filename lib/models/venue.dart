@@ -16,6 +16,8 @@ class Venue extends BaseUser {
   final bool originals;
   final List followers;
   final List following;
+  //final int mttp; //mean time to pay
+  //final bool chasedown; //Did musicians have to chase down the venue to pay?
 
   const Venue({
     required this.uid,
@@ -32,6 +34,8 @@ class Venue extends BaseUser {
     required this.originals,
     required this.followers,
     required this.following,
+    //required this.mttp,
+    //required this.chasedown,
   });
 
   Map<String, dynamic> toJson() => {
@@ -49,6 +53,8 @@ class Venue extends BaseUser {
         'originals': originals,
         'followers': followers,
         'following': following,
+        //'mttp' : mttp,
+        //'chasedown' : chasedown,
       };
 
   static Venue fromSnap(DocumentSnapshot snap) {
@@ -69,6 +75,8 @@ class Venue extends BaseUser {
       originals: snapshot['originals'],
       followers: snapshot['followers'],
       following: snapshot['following'],
+      //mttp: snapshot['mttp'],
+      //chasedown: snapshot['chasedown'],
     );
   }
 
