@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-const mobileBackgroundColor = Color.fromRGBO(0, 0, 0, 1);
-const webBackgroundColor = Color.fromRGBO(18, 18, 18, 1);
-const mobileSearchColor = Color.fromRGBO(38, 38, 38, 1);
-const blueColor = Color.fromRGBO(0, 149, 246, 1);
+const mobileBackgroundColor = Colors.black;
+const webBackgroundColor = Colors.black;
+const mobileSearchColor = Colors.black;
 const primaryColor = Colors.white;
 const secondaryColor = Colors.grey;
+
+const tealColor = Color(0x3E898C);
+const blueColor = Color(0x005579);
+const redColor = Color(0xE94101);
+const orangeColor = Color(0xFF792A);
+const beigeColor = Color(0xFFE8BE);

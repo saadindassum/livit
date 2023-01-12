@@ -181,60 +181,6 @@ class _SignupScreenState extends State<SignupScreen> {
               const SizedBox(height: 22),
               Flexible(flex: 2, child: Container()),
 
-              // // signup button neumorphism
-              // InkWell(
-              //     onTap: signUpUser,
-              //     child: Container(
-              //       width: 200.0,
-              //       height: 100.0,
-              //       color: const Color(0xff333333),
-              //       alignment: Alignment.center,
-              //       transformAlignment: Alignment.center,
-              //       child: Container(
-              //         color: const Color(0xff333333),
-              //         child: Container(
-              //           width: 100,
-              //           height: 50,
-              //           decoration: BoxDecoration(
-              //             color: const Color(0xff333333),
-              //             borderRadius: BorderRadius.circular(30),
-              //             gradient: const LinearGradient(
-              //               begin: Alignment.topLeft,
-              //               end: Alignment.bottomRight,
-              //               colors: [
-              //                 Color(0xff333333),
-              //                 Color(0xff333333),
-              //               ],
-              //             ),
-              //             boxShadow: const [
-              //               BoxShadow(
-              //                 color: Color(0xff4c4c4c),
-              //                 offset: Offset(-20.4, -20.4),
-              //                 blurRadius: 29,
-              //                 spreadRadius: 0.0,
-              //               ),
-              //               BoxShadow(
-              //                 color: Color(0xff1a1a1a),
-              //                 offset: Offset(20.4, 20.4),
-              //                 blurRadius: 29,
-              //                 spreadRadius: 0.0,
-              //               ),
-              //             ],
-              //           ),
-              //           child: !_isLoading
-              //               ? const Text(
-              //                   'Sign up',
-              //                   style: TextStyle(fontWeight: FontWeight.bold),
-              //                 )
-              //               : const CircularProgressIndicator(
-              //                   color: primaryColor,
-              //                 ),
-              //         ),
-              //       ),
-              //     )),
-              // const SizedBox(height: 22),
-              // Flexible(flex: 2, child: Container()),
-
               // login button
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
