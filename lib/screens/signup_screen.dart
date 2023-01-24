@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:livit/resources/auth_methods.dart';
 import 'package:livit/responsive/mobile_layout.dart';
@@ -90,11 +91,14 @@ class _SignupScreenState extends State<SignupScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Flexible(flex: 2, child: Container()),
+              Flexible(flex: 1, child: Container()),
 
               // logo
-
-              //const SizedBox(height: 64),
+              SvgPicture.asset(
+                'assets/livit_full_logo_v1.svg',
+                height: 85,
+              ),
+              const SizedBox(height: 22),
 
               // profile picture
               Stack(
@@ -115,12 +119,12 @@ class _SignupScreenState extends State<SignupScreen> {
                     child: IconButton(
                       onPressed: selectImage,
                       icon: const Icon(Icons.add_a_photo),
-                      color: Colors.orangeAccent,
+                      color: orangeColor,
                     ),
                   ),
                 ],
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 22),
 
               // username input
               TextFieldInput(
@@ -166,11 +170,11 @@ class _SignupScreenState extends State<SignupScreen> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(6)),
                     ),
-                    color: Colors.orange,
+                    color: orangeColor,
                   ),
                   child: !_isLoading
                       ? const Text(
-                          'Sign up',
+                          'Sign-Up as Artist',
                           style: TextStyle(fontWeight: FontWeight.bold),
                         )
                       : const CircularProgressIndicator(
@@ -179,6 +183,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 ),
               ),
               const SizedBox(height: 22),
+
               Flexible(flex: 2, child: Container()),
 
               // login button

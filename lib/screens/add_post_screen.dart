@@ -141,7 +141,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                   child: const Text(
                     'Post',
                     style: TextStyle(
-                      color: Colors.orange,
+                      color: orangeColor,
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
                     ),

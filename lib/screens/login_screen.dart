@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:livit/resources/auth_methods.dart';
 import 'package:livit/responsive/mobile_layout.dart';
 import 'package:livit/responsive/resp_layout.dart';
@@ -79,7 +80,10 @@ class _LoginScreenState extends State<LoginScreen> {
               Flexible(flex: 2, child: Container()),
 
               // logo
-
+              SvgPicture.asset(
+                'assets/livit_full_logo_v1.svg',
+                height: 85,
+              ),
               const SizedBox(height: 64),
 
               // email input
@@ -110,7 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(6)),
                     ),
-                    color: Colors.orange,
+                    color: orangeColor,
                   ),
                   child: !_isLoading
                       ? const Text(

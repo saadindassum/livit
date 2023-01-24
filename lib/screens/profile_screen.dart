@@ -149,9 +149,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                               )
                                             : FollowButton(
                                                 text: 'Follow',
-                                                backgroundColor: Colors.orange,
+                                                backgroundColor: orangeColor,
                                                 textColor: Colors.white,
-                                                borderColor: Colors.orange,
+                                                borderColor: orangeColor,
                                                 function: () async {
                                                   await FirestoreMethods()
                                                       .followUser(
