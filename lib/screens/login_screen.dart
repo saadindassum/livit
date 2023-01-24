@@ -81,7 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
               // logo
               SvgPicture.asset(
-                'assets/livit_full_logo_v1.svg',
+                'assets/livit_logo_full.svg',
                 height: 85,
               ),
               const SizedBox(height: 64),
