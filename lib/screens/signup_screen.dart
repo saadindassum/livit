@@ -104,7 +104,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         'assets/livit_logo_full.svg',
                         height: 85,
                       ),
-                      const SizedBox(height: 64),
+                      const SizedBox(height: 40),
 
                       // profile picture
                       Stack(
@@ -130,7 +130,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 64),
+                      const SizedBox(height: 40),
 
                       // username input
                       TextFieldInput(
@@ -138,7 +138,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         textInputType: TextInputType.text,
                         textEditingController: _usernameController,
                       ),
-                      const SizedBox(height: 24),
+                      const SizedBox(height: 20),
 
                       // email input
                       TextFieldInput(
@@ -146,7 +146,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         textInputType: TextInputType.emailAddress,
                         textEditingController: _emailController,
                       ),
-                      const SizedBox(height: 24),
+                      const SizedBox(height: 20),
 
                       // password input
                       TextFieldInput(
@@ -155,7 +155,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         textEditingController: _passwordController,
                         isPass: true,
                       ),
-                      const SizedBox(height: 24),
+                      const SizedBox(height: 20),
 
                       // bio input
                       TextFieldInput(
@@ -163,35 +163,73 @@ class _SignupScreenState extends State<SignupScreen> {
                         textInputType: TextInputType.text,
                         textEditingController: _bioController,
                       ),
-                      const SizedBox(height: 24),
+                      const SizedBox(height: 20),
 
-                      // signup as user button
-                      InkWell(
-                        onTap: signUpUser,
-                        child: Container(
-                          width: double.infinity,
-                          alignment: Alignment.center,
-                          padding: const EdgeInsets.symmetric(vertical: 12),
-                          decoration: const ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(6)),
-                            ),
-                            color: orangeColor,
-                          ),
-                          child: !_isLoading
-                              ? const Text(
-                                  'Sign-Up as Artist',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                )
-                              : const CircularProgressIndicator(
-                                  color: primaryColor,
+                      // signup as artist button
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Expanded(
+                            child: InkWell(
+                              onTap: signUpUser,
+                              child: Container(
+                                width: double.infinity,
+                                alignment: Alignment.center,
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 12),
+                                decoration: const ShapeDecoration(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(6)),
+                                  ),
+                                  color: orangeColor,
                                 ),
-                        ),
-                      ),
-                      const SizedBox(height: 24),
+                                child: !_isLoading
+                                    ? const Text(
+                                        'Signup as Artist',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold),
+                                      )
+                                    : const CircularProgressIndicator(
+                                        color: primaryColor,
+                                      ),
+                              ),
+                            ),
+                          ),
 
-                      // signup as venue
+                          const Text("      "),
+
+                          // signup as venue button
+                          Expanded(
+                            child: InkWell(
+                              //onTap: ,
+                              child: Container(
+                                width: double.infinity,
+                                alignment: Alignment.center,
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 12),
+                                decoration: const ShapeDecoration(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(6)),
+                                  ),
+                                  color: orangeColor,
+                                ),
+                                child: !_isLoading
+                                    ? const Text(
+                                        'Signup as Venue',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold),
+                                      )
+                                    : const CircularProgressIndicator(
+                                        color: primaryColor,
+                                      ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 20),
 
                       Flexible(flex: 2, child: Container()),
 

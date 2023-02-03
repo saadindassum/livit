@@ -84,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 'assets/livit_logo_full.svg',
                 height: 85,
               ),
-              const SizedBox(height: 64),
+              const SizedBox(height: 80),
 
               // email input
               TextFieldInput(
@@ -92,7 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 textInputType: TextInputType.emailAddress,
                 textEditingController: _emailController,
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 25),
 
               // password input
               TextFieldInput(
@@ -101,7 +101,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 textEditingController: _passwordController,
                 isPass: true,
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 25),
 
               // login button
               InkWell(
