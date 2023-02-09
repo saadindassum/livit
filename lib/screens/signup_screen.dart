@@ -111,17 +111,18 @@ class _SignupScreenState extends State<SignupScreen> {
                         children: [
                           _image != null
                               ? CircleAvatar(
-                                  radius: 64,
+                                  radius: 60,
                                   backgroundImage: MemoryImage(_image!),
                                 )
                               : const CircleAvatar(
-                                  radius: 64,
-                                  backgroundImage: NetworkImage(
-                                      'https://i1.sndcdn.com/avatars-46GF1rag02JyR6y8-zIUu6w-t500x500.jpg'),
+                                  radius: 60,
+                                  backgroundImage: AssetImage(
+                                    'assets/livit_default_avatar.png',
+                                  ),
                                 ),
                           Positioned(
-                            bottom: -10,
-                            left: 80,
+                            bottom: -11,
+                            left: 79,
                             child: IconButton(
                               onPressed: selectImage,
                               icon: const Icon(Icons.add_a_photo),

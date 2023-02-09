@@ -1,3 +1,4 @@
+// determines whether mobile or web version
 import 'package:flutter/material.dart';
 import 'package:livit/providers/user_provider.dart';
 import 'package:livit/utils/global_var.dart';

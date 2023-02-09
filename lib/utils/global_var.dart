@@ -9,9 +9,9 @@ const webScreenSize = 600; // determine whether web or mobile
 
 // bottom home screen items
 List<Widget> homeScreenItems = [
-  const FeedScreen(),
   const SearchScreen(),
   const AddPostScreen(),
+  const FeedScreen(),
   const Text('notif'),
   ProfileScreen(uid: FirebaseAuth.instance.currentUser!.uid),
 ];

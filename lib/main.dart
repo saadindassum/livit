@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:livit/providers/user_provider.dart';
 import 'package:livit/responsive/mobile_layout.dart';
 import 'package:livit/responsive/resp_layout.dart';

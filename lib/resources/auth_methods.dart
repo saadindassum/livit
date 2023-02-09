@@ -45,8 +45,7 @@ class AuthMethods {
         // else use default image
         String photoUrl;
         if (file == null) {
-          photoUrl =
-              'https://i1.sndcdn.com/avatars-46GF1rag02JyR6y8-zIUu6w-t500x500.jpg';
+          photoUrl = 'assets/livit_default_avatar.png';
         } else {
           photoUrl = await StorageMethods()
               .uploadImageToStorage('profilePics', file, false);
