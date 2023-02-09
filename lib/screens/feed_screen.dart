@@ -30,10 +30,10 @@ class _FeedScreenState extends State<FeedScreen> {
               centerTitle: false,
               // title: SvgPicture.asset('logo.svg', color: primaryColor, height: 32),
               actions: [
-                // in-app messaging -- need to be completed
+                // TODO: notifications
                 IconButton(
                   onPressed: () {},
-                  icon: const Icon(Icons.message_outlined),
+                  icon: const Icon(Icons.notifications),
                 )
               ],
             ),

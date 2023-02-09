@@ -53,45 +53,41 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
               Icons.my_location_outlined,
               color: _page == 0 ? orangeColor : primaryColor,
             ),
-            label: '',
-            backgroundColor: primaryColor,
+            label: 'EXPLORE',
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.calendar_today_outlined,
               color: _page == 1 ? orangeColor : primaryColor,
             ),
-            label: '',
-            backgroundColor: primaryColor,
+            label: 'CALENDAR',
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Livit_Icon.livit_icon_v3,
               color: _page == 2 ? orangeColor : primaryColor,
-              size: 38,
             ),
-            label: '',
-            backgroundColor: primaryColor,
+            label: 'HOME',
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.message_outlined,
               color: _page == 3 ? orangeColor : primaryColor,
             ),
-            label: '',
-            backgroundColor: primaryColor,
+            label: 'CHAT',
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.person_outlined,
               color: _page == 4 ? orangeColor : primaryColor,
             ),
-            label: '',
-            backgroundColor: primaryColor,
+            label: 'PROFILE',
           ),
         ],
         onTap: navigationTapped,
         currentIndex: _page,
+        activeColor: orangeColor,
+        inactiveColor: primaryColor,
       ),
     );
   }
