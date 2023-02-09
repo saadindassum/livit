@@ -7,7 +7,7 @@ import 'package:livit/screens/search_screen.dart';
 
 const webScreenSize = 600; // determine whether web or mobile
 
-// bottom home screen items
+// bottom navigation bar items
 List<Widget> homeScreenItems = [
   const SearchScreen(),
   const AddPostScreen(),
