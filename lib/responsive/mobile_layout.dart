@@ -74,7 +74,7 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
               Icons.message_outlined,
               color: _page == 3 ? orangeColor : primaryColor,
             ),
-            label: 'CHAT',
+            label: 'MESSAGES',
           ),
           BottomNavigationBarItem(
             icon: Icon(
