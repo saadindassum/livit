@@ -25,16 +25,12 @@ class AuthMethods {
     required String email,
     required String password,
     required String bio,
-    required Uint8List? file,
+    Uint8List? file,
   }) async {
     String res = "error occurred";
     try {
-      if (username.isNotEmpty &&
-          email.isNotEmpty &&
-          password.isNotEmpty &&
-          bio.isNotEmpty &&
-          file != null) {
-        // register user
+      if (username.isNotEmpty && email.isNotEmpty && password.isNotEmpty) {
+        // register user with email and password
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
           email: email,
           password: password,
@@ -43,17 +39,11 @@ class AuthMethods {
         // add profile picture to firebase
         // if user has selected image upload that
         // else use default image
-        String photoUrl;
-        if (file == null) {
-          photoUrl = 'assets/livit_default_avatar.png';
-        } else {
+        String photoUrl = "";
+        if (file != null) {
           photoUrl = await StorageMethods()
               .uploadImageToStorage('profilePics', file, false);
         }
-
-        // delete if above works
-        // String photoUrl = await StorageMethods()
-        //     .uploadImageToStorage('profilePics', file, false);
 
         // add user to firebase
         model.User user = model.User(
