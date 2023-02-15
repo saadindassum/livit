@@ -2,6 +2,7 @@
 import 'dart:typed_data';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
 import 'package:livit/models/user.dart' as model;
 import 'package:livit/resources/storage_methods.dart';
 
@@ -43,6 +44,12 @@ class AuthMethods {
         if (file != null) {
           photoUrl = await StorageMethods()
               .uploadImageToStorage('profilePics', file, false);
+        } else {
+          final ByteData bytes =
+              await rootBundle.load('assets/livit_default_avatar.png');
+          final Uint8List defaultImg = bytes.buffer.asUint8List();
+          photoUrl = await StorageMethods()
+              .uploadImageToStorage('profilePics', defaultImg, false);
         }
 
         // add user to firebase
