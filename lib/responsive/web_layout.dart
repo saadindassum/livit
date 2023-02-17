@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:livit/livit_icons.dart';
 import 'package:livit/utils/colors.dart';
 import 'package:livit/utils/global_var.dart';
 
@@ -55,31 +56,24 @@ class _WebScreenLayoutState extends State<WebScreenLayout> {
           ),
           IconButton(
             icon: Icon(
-              Icons.search,
+              Livit.livit_logo_v3,
               color: _page == 1 ? primaryColor : secondaryColor,
             ),
             onPressed: () => navigationTapped(1),
           ),
           IconButton(
             icon: Icon(
-              Icons.add_a_photo,
+              Icons.message_outlined,
               color: _page == 2 ? primaryColor : secondaryColor,
             ),
             onPressed: () => navigationTapped(2),
           ),
           IconButton(
             icon: Icon(
-              Icons.stars,
+              Icons.person_outlined,
               color: _page == 3 ? primaryColor : secondaryColor,
             ),
             onPressed: () => navigationTapped(3),
-          ),
-          IconButton(
-            icon: Icon(
-              Icons.person,
-              color: _page == 4 ? primaryColor : secondaryColor,
-            ),
-            onPressed: () => navigationTapped(4),
           ),
         ],
       ),

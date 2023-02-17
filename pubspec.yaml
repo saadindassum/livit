@@ -62,9 +62,9 @@ flutter:
     - assets/livit_default_avatar.png
   # Add fonts/icons to livit:
   fonts:
-    - family: Livit_Icon
+    - family: Livit
       fonts:
-        - asset: assets/Livit_Icon.ttf
+        - asset: assets/Livit.ttf
   
 
 # run following cmds to generate app icon

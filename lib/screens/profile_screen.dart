@@ -18,7 +18,6 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   var userData = {};
-  int postLen = 0;
   int followerLen = 0;
   int followingLen = 0;
   bool isFollowing = false;
@@ -39,13 +38,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           .collection('users')
           .doc(widget.uid)
           .get();
-      // get post length
-      var postSnap = await FirebaseFirestore.instance
-          .collection('posts')
-          .where('uid', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
-          .get();
 
-      postLen = postSnap.docs.length;
       userData = userSnap.data()!;
       followerLen = userSnap.data()!['followers'].length;
       followingLen = userSnap.data()!['following'].length;
@@ -69,7 +62,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           )
         : Scaffold(
             appBar: AppBar(
-              title: Text(userData['username']),
+              //title: Text(userData['username']),
               backgroundColor: mobileBackgroundColor,
               centerTitle: false,
             ),
@@ -95,8 +88,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
-                                    // display # of posts
-                                    // buildStatColumn(postLen, 'posts'),
+                                    // display # of followers / following
                                     buildStatColumn(followerLen, 'followers '),
                                     buildStatColumn(followingLen, ' following'),
                                   ],

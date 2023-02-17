@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:livit/livit__icon_icons.dart';
+import 'package:livit/livit_icons.dart';
 import 'package:livit/utils/colors.dart';
 import 'package:livit/utils/global_var.dart';
 
@@ -50,36 +50,32 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.my_location_outlined,
+              Icons.home,
+              size: 35,
               color: _page == 0 ? orangeColor : primaryColor,
-            ),
-            label: 'EXPLORE',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.calendar_today_outlined,
-              color: _page == 1 ? orangeColor : primaryColor,
-            ),
-            label: 'CALENDAR',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Livit_Icon.livit_icon_v3,
-              color: _page == 2 ? orangeColor : primaryColor,
             ),
             label: 'HOME',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.message_outlined,
-              color: _page == 3 ? orangeColor : primaryColor,
+              Livit.livit_logo_v3,
+              size: 29,
+              color: _page == 1 ? orangeColor : primaryColor,
             ),
-            label: 'MESSAGES',
+            label: 'EXPLORE',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.message_outlined,
+              color: _page == 2 ? orangeColor : primaryColor,
+            ),
+            label: 'MESSAGE',
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.person_outlined,
-              color: _page == 4 ? orangeColor : primaryColor,
+              size: 36,
+              color: _page == 3 ? orangeColor : primaryColor,
             ),
             label: 'PROFILE',
           ),
