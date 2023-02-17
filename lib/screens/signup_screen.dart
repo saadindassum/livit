@@ -161,7 +161,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
                       // bio input
                       TextFieldInput(
-                        hintText: 'Enter Bio',
+                        hintText: 'Enter Bio (Optional)',
                         textInputType: TextInputType.text,
                         textEditingController: _bioController,
                       ),
@@ -199,7 +199,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             ),
                           ),
 
-                          const Text("      "),
+                          const SizedBox(width: 35),
 
                           // signup as venue button
                           Expanded(

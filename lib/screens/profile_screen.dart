@@ -74,11 +74,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     children: [
                       Row(
                         children: [
-                          CircleAvatar(
-                            backgroundColor: Colors.grey,
-                            backgroundImage: NetworkImage(userData['photoUrl']),
-                            radius: 38,
-                          ),
                           Expanded(
                             flex: 1,
                             child: Column(
@@ -89,8 +84,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     // display # of followers / following
-                                    buildStatColumn(followerLen, 'followers '),
-                                    buildStatColumn(followingLen, ' following'),
+                                    buildStatColumn(followerLen, 'followers'),
+                                    const SizedBox(width: 40),
+                                    CircleAvatar(
+                                      backgroundColor: Colors.grey,
+                                      backgroundImage:
+                                          NetworkImage(userData['photoUrl']),
+                                      radius: 38,
+                                    ),
+                                    const SizedBox(width: 40),
+                                    buildStatColumn(followingLen, 'following'),
                                   ],
                                 ),
                                 Row(
