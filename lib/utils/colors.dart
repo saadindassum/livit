@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 const mobileBackgroundColor = Colors.black;
 const webBackgroundColor = Colors.black;
-const mobileSearchColor = Colors.black;
 const primaryColor = Colors.white;
 const secondaryColor = Colors.grey;
 // 0xFF first two 'F' for opacity

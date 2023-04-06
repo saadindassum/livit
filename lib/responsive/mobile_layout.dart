@@ -59,7 +59,7 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
           BottomNavigationBarItem(
             icon: Icon(
               Livit.livit_logo_v3,
-              size: 29,
+              size: 30,
               color: _page == 1 ? orangeColor : primaryColor,
             ),
             label: 'EXPLORE',

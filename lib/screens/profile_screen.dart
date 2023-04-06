@@ -69,7 +69,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             body: ListView(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(10),
                   child: Column(
                     children: [
                       Row(
@@ -87,7 +87,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     buildStatColumn(followerLen, 'followers'),
                                     const SizedBox(width: 40),
                                     CircleAvatar(
-                                      backgroundColor: Colors.grey,
+                                      backgroundColor: secondaryColor,
                                       backgroundImage:
                                           NetworkImage(userData['photoUrl']),
                                       radius: 38,
@@ -110,7 +110,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                             backgroundColor:
                                                 mobileBackgroundColor,
                                             textColor: primaryColor,
-                                            borderColor: Colors.grey,
+                                            borderColor: secondaryColor,
                                             function: () async {
                                               // signout user
                                               await AuthMethods().signOut();
@@ -127,9 +127,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         : isFollowing
                                             ? FollowButton(
                                                 text: 'Unfollow',
-                                                backgroundColor: Colors.white,
-                                                textColor: Colors.black,
-                                                borderColor: Colors.grey,
+                                                backgroundColor: primaryColor,
+                                                textColor:
+                                                    mobileBackgroundColor,
+                                                borderColor: secondaryColor,
                                                 function: () async {
                                                   await FirestoreMethods()
                                                       .followUser(
@@ -146,7 +147,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                             : FollowButton(
                                                 text: 'Follow',
                                                 backgroundColor: orangeColor,
-                                                textColor: Colors.white,
+                                                textColor: primaryColor,
                                                 borderColor: orangeColor,
                                                 function: () async {
                                                   await FirestoreMethods()
@@ -231,6 +232,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           );
   }
 
+  // show user posts
   Column buildStatColumn(int num, String label) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -250,7 +252,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w400,
-              color: Colors.grey,
+              color: secondaryColor,
             ),
           ),
         ),
