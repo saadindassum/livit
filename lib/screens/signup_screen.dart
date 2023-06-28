@@ -20,6 +20,7 @@ class SignupScreen extends StatefulWidget {
 
 class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _displayNameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _bioController = TextEditingController();
@@ -51,6 +52,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
     String res = await AuthMethods().signUpUser(
       username: _usernameController.text,
+      displayName: _displayNameController.text,
       email: _emailController.text,
       password: _passwordController.text,
       bio: _bioController.text,

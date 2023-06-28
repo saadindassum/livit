@@ -4,6 +4,11 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:livit/screens/profile_screen.dart';
 import 'package:livit/utils/colors.dart';
 
+//TODO: implement search according to documentation below
+///Search needs to score by sort. If another tag is specified by the user
+///(such as new venues that have registered), then the app sorts by new and then
+///by score.
+
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
 

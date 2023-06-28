@@ -23,6 +23,7 @@ class AuthMethods {
   // user signup
   Future<String> signUpUser({
     required String username,
+    required String displayName,
     required String email,
     required String password,
     required String bio,
@@ -41,6 +42,7 @@ class AuthMethods {
         // if user has selected image upload that
         // else use default image
         String photoUrl = "";
+        String logoUrl = '';
         if (file != null) {
           photoUrl = await StorageMethods()
               .uploadImageToStorage('profilePics', file, false);
@@ -55,12 +57,14 @@ class AuthMethods {
         // add user to firebase
         model.User user = model.User(
           username: username,
+          displayName: displayName,
           uid: cred.user!.uid,
           email: email,
           bio: bio,
           followers: [],
           following: [],
           photoUrl: photoUrl,
+          logoUrl: logoUrl,
         );
 
         await _firestore

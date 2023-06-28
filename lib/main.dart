@@ -1,14 +1,23 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:livit/providers/match_provider.dart';
+import 'package:provider/provider.dart';
+
 import 'package:livit/providers/user_provider.dart';
+import 'package:livit/providers/event_provider.dart';
+
 import 'package:livit/responsive/mobile_layout.dart';
 import 'package:livit/responsive/resp_layout.dart';
 import 'package:livit/responsive/web_layout.dart';
 import 'package:livit/screens/login_screen.dart';
+
 import 'package:livit/utils/colors.dart';
-import 'package:provider/provider.dart';
+import 'package:livit/utils/size_config.dart';
+
+import 'package:livit/screens/explore_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -36,10 +45,17 @@ class MyApp extends StatelessWidget {
   // this widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SizeConfig.init(context);
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
           create: (_) => UserProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => EventProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => MatchProvider(),
         ),
       ],
       child: MaterialApp(
@@ -69,7 +85,8 @@ class MyApp extends StatelessWidget {
                 child: CircularProgressIndicator(color: primaryColor),
               );
             }
-            return const LoginScreen();
+            // return const LoginScreen();
+            return const ExploreScreen();
           },
         ),
       ),
