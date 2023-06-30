@@ -8,12 +8,12 @@ class EventProvider with ChangeNotifier {
     Event(
       open: true,
       eid: '42069owl',
-      hostID: 'pollos',
-      eventName: 'Owl Fest',
+      hostID: 'lsCustoms',
+      eventName: 'Car Fest',
       dateTime: DateTime(2023, 4, 20, 4, 20),
       photoUrl:
-          'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg',
-      genreTags: ['rock', 'pop'],
+          'https://www.teenagecancertrust.org/sites/default/files/styles/16_9_media_huge/public/2022-11/20220826_CarFest_South_2022_Friday_Main_Stage_James_Blunt_028.JPG?h=82f92a78&itok=z3ZEXcw7',
+      genres: ['rock', 'pop'],
       originals: true,
     ),
   ];
@@ -37,12 +37,12 @@ class EventProvider with ChangeNotifier {
     Event(
       open: true,
       eid: '42069owl',
-      hostID: 'pollos',
+      hostID: 'lsCustoms',
       eventName: 'Owl Fest',
       dateTime: DateTime(2023, 4, 20, 4, 20),
       photoUrl:
           'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg',
-      genreTags: ['rock', 'pop'],
+      genres: ['rock', 'pop'],
       originals: true,
     ),
   ];

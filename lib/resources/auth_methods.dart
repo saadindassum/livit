@@ -27,6 +27,9 @@ class AuthMethods {
     required String email,
     required String password,
     required String bio,
+    //This single string will be separated by commas for now
+    required String genres,
+    required bool originals,
     Uint8List? file,
   }) async {
     String res = "error occurred";
@@ -43,6 +46,7 @@ class AuthMethods {
         // else use default image
         String photoUrl = "";
         String logoUrl = '';
+        int starRating = 5;
         if (file != null) {
           photoUrl = await StorageMethods()
               .uploadImageToStorage('profilePics', file, false);
@@ -56,16 +60,18 @@ class AuthMethods {
 
         // add user to firebase
         model.User user = model.User(
-          username: username,
-          displayName: displayName,
-          uid: cred.user!.uid,
-          email: email,
-          bio: bio,
-          followers: [],
-          following: [],
-          photoUrl: photoUrl,
-          logoUrl: logoUrl,
-        );
+            username: username,
+            displayName: displayName,
+            uid: cred.user!.uid,
+            email: email,
+            bio: bio,
+            photoUrl: photoUrl,
+            logoUrl: logoUrl,
+            followers: [],
+            following: [],
+            genres: genres.split(','),
+            originals: originals,
+            starRating: starRating);
 
         await _firestore
             .collection('users')

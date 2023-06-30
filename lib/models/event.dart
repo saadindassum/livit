@@ -1,13 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:livit/models/matchable.dart';
 
-class Event {
+class Event implements Matchable {
   final bool open;
   final String eid;
   final String hostID;
   final String eventName;
   final DateTime dateTime;
   final String photoUrl;
-  final List<String> genreTags;
+  final List<String> genres;
   final bool originals;
 
   const Event(
@@ -17,7 +18,7 @@ class Event {
       required this.eventName,
       required this.dateTime,
       required this.photoUrl,
-      required this.genreTags,
+      required this.genres,
       required this.originals});
 
   Map<String, dynamic> toJson() => {
@@ -27,7 +28,7 @@ class Event {
         'eventName': eventName,
         'dateTime': dateTime,
         'photoUrl': photoUrl,
-        'genreTags': genreTags,
+        'genres': genres,
         'originals': originals,
       };
 
@@ -41,8 +42,48 @@ class Event {
       eventName: snapshot['eventName'],
       dateTime: snapshot['dateTime'],
       photoUrl: snapshot['photoUrl'],
-      genreTags: snapshot['genreTags'],
+      genres: snapshot['genres'],
       originals: snapshot['originals'],
     );
+  }
+
+  @override
+  String getDisplayName() {
+    return eventName;
+  }
+
+  @override
+  String getId() {
+    return eid;
+  }
+
+  @override
+  String getPictureUrl() {
+    return photoUrl;
+  }
+
+  @override
+  String getLogoUrl() {
+    return '';
+  }
+
+  @override
+  MatchType getMatchType() {
+    return MatchType.event;
+  }
+
+  @override
+  int getStarRating() {
+    return 0;
+  }
+
+  @override
+  List<String> getGenres() {
+    return genres;
+  }
+
+  @override
+  bool doesOriginals() {
+    return originals;
   }
 }

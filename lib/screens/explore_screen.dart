@@ -1,34 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:livit/utils/size_config.dart';
+import 'package:livit/widgets/matchable_card_list.dart';
 import 'package:provider/provider.dart';
 
-import 'package:livit/models/user.dart';
-
 import 'package:livit/utils/app_style.dart';
-
-import 'package:livit/providers/user_provider.dart';
+import 'package:livit/utils/colors.dart';
 import 'package:livit/providers/event_provider.dart';
 import 'package:livit/providers/match_provider.dart';
 
 class ExploreScreen extends StatelessWidget with WidgetsBindingObserver {
   const ExploreScreen({super.key});
 
-  /*User getFeaturedEventHost(context) {
-    return context
-        .watch<MatchProvider>()
-        .getUserByUID(context.watch<EventProvider>().nextMatchingEvent.hostID);
-  }*/
-
   @override
   Widget build(BuildContext context) {
     final formatter = DateFormat.yMMMd();
+    String logoUrl = context
+        .watch<MatchProvider>()
+        .getUserByUID(context.watch<EventProvider>().nextMatchingEvent.hostID)
+        .getLogoUrl();
 
     return Stack(
       children: [
         //COMPONENT: Background Image
         SizedBox(
-          height: SizeConfig.blockSizeVertical! * 70,
+          height: SizeConfig.blockSizeVertical! * 80,
           width: double.infinity,
           child: ShaderMask(
             shaderCallback: (Rect rect) {
@@ -56,71 +52,73 @@ class ExploreScreen extends StatelessWidget with WidgetsBindingObserver {
             ),
           ),
         ),
-        //COMPONENT: Event Text
+        //Scrollable area
         Container(
-          padding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
-          height: SizeConfig.blockSizeVertical! * 70,
-          child: Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.end,
+          padding: sidePadding,
+          child: SingleChildScrollView(
+            //COMPONENT: Featured Event Text
+            child: Column(
               children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    DefaultTextStyle(
-                      style: ubuntu.copyWith(
-                        fontSize: SizeConfig.title,
-                        color: kTangerine,
+                Container(
+                  padding: sidePadding,
+                  height: SizeConfig.blockSizeVertical! * 65,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          DefaultTextStyle(
+                            style: ubuntu.copyWith(
+                              fontSize: SizeConfig.title,
+                              color: kTangerine,
+                            ),
+                            child: Text(context
+                                .watch<EventProvider>()
+                                .nextMatchingEvent
+                                .eventName),
+                          ),
+                          DefaultTextStyle(
+                            style: ubuntu.copyWith(
+                              fontSize: SizeConfig.subtitle,
+                            ),
+                            child: Text(
+                              '${DateFormat('EEEE').format(context.watch<EventProvider>().nextMatchingEvent.dateTime)} ${formatter.format(context.watch<EventProvider>().nextMatchingEvent.dateTime)}',
+                            ),
+                          ),
+                        ],
                       ),
-                      child: Text(context
-                          .watch<EventProvider>()
-                          .nextMatchingEvent
-                          .eventName),
-                    ),
-                    DefaultTextStyle(
-                      style: ubuntu.copyWith(
-                        fontSize: SizeConfig.subtitle,
-                      ),
-                      child: Text(
-                        '${DateFormat('EEEE').format(context.watch<EventProvider>().nextMatchingEvent.dateTime)} ${formatter.format(context.watch<EventProvider>().nextMatchingEvent.dateTime)}',
-                      ),
-                    ),
-                  ],
+                      //if host has logo, display logo. If not, name
+                      (logoUrl == '')
+                          ? DefaultTextStyle(
+                              style: ubuntu.copyWith(
+                                  fontSize: SizeConfig.paragraph),
+                              child: Text(
+                                context
+                                    .watch<MatchProvider>()
+                                    .getUserByUID(context
+                                        .watch<EventProvider>()
+                                        .nextMatchingEvent
+                                        .hostID)
+                                    .getDisplayName(),
+                                overflow: TextOverflow.visible,
+                              ),
+                            )
+                          : SizedBox(
+                              width: SizeConfig.blockSizeHorizontal! * 30,
+                              child: Image.network(logoUrl),
+                            ),
+                    ],
+                  ),
                 ),
-                //if host has logo, display logo. If not, name
-                (context
-                            .watch<MatchProvider>()
-                            .getUserByUID(context
-                                .watch<EventProvider>()
-                                .nextMatchingEvent
-                                .hostID)
-                            .logoUrl ==
-                        '')
-                    ? DefaultTextStyle(
-                        style: ubuntu.copyWith(fontSize: SizeConfig.paragraph),
-                        child: Text(
-                          context
-                              .watch<MatchProvider>()
-                              .getUserByUID(context
-                                  .watch<EventProvider>()
-                                  .nextMatchingEvent
-                                  .hostID)
-                              .displayName,
-                          overflow: TextOverflow.visible,
-                        ),
-                      )
-                    : SizedBox(
-                        width: SizeConfig.blockSizeHorizontal! * 10,
-                        child: Image.network(context
-                            .watch<MatchProvider>()
-                            .getUserByUID(context
-                                .watch<EventProvider>()
-                                .nextMatchingEvent
-                                .hostID)
-                            .logoUrl),
-                      ),
+                SizedBox(
+                  height: SizeConfig.blockSizeVertical! * 8,
+                ),
+                //List of matches
+                MatchableCardList(
+                    matchList: context.watch<MatchProvider>().matchList)
               ],
             ),
           ),

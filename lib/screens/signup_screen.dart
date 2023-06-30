@@ -24,6 +24,7 @@ class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _bioController = TextEditingController();
+  final TextEditingController _genresController = TextEditingController();
   Uint8List? _image;
   bool _isLoading = false;
 
@@ -56,6 +57,9 @@ class _SignupScreenState extends State<SignupScreen> {
       email: _emailController.text,
       password: _passwordController.text,
       bio: _bioController.text,
+      genres: _genresController.text,
+      //TODO: Implement the option for the user to say they do originals.
+      originals: false,
       file: _image,
     );
 
