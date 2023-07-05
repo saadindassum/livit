@@ -62,6 +62,7 @@ class AuthMethods {
         model.User user = model.User(
             username: username,
             displayName: displayName,
+            userType: model.UserType.artist,
             uid: cred.user!.uid,
             email: email,
             bio: bio,

@@ -1,8 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:livit/models/matchable.dart';
 
+enum UserType {
+  artist,
+  venue,
+}
+
 class User implements Matchable {
   final String uid;
+  final UserType userType;
   final String username;
   final String displayName;
   final String email;
@@ -17,6 +23,7 @@ class User implements Matchable {
 
   const User({
     required this.uid,
+    required this.userType,
     required this.username,
     required this.displayName,
     required this.email,
@@ -32,6 +39,7 @@ class User implements Matchable {
 
   Map<String, dynamic> toJson() => {
         'uid': uid,
+        'userType': userType,
         'username': username,
         'displayName': displayName,
         'email': email,
@@ -47,6 +55,7 @@ class User implements Matchable {
 
     return User(
       uid: snapshot['uid'],
+      userType: snapshot['usertype'],
       username: snapshot['username'],
       displayName: snapshot['displayName'],
       email: snapshot['email'],
@@ -59,6 +68,10 @@ class User implements Matchable {
       originals: snapshot['genres'],
       starRating: snapshot['starRating'],
     );
+  }
+
+  UserType getUserType() {
+    return userType;
   }
 
   @override

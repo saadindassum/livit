@@ -16,6 +16,7 @@ class MatchProvider with ChangeNotifier {
   final List<Matchable> _matchList = [
     const User(
       uid: 'tpe',
+      userType: UserType.venue,
       username: 'trevorPhillipsEnterprises',
       displayName: 'Trevor Phillips Enterprises',
       email: 'trevor@tpe.com',
@@ -33,6 +34,7 @@ class MatchProvider with ChangeNotifier {
     ),
     const User(
       uid: 'pollos',
+      userType: UserType.venue,
       username: 'pollosHermanos',
       displayName: 'Los Pollos Hermanos',
       email: 'fring@pollos.com',
@@ -49,6 +51,7 @@ class MatchProvider with ChangeNotifier {
     ),
     const User(
       uid: 'lsCustoms',
+      userType: UserType.venue,
       username: 'LosSantosCustoms',
       displayName: 'Los Santos Customs',
       email: 'dude@lsCustoms.com',
@@ -65,6 +68,7 @@ class MatchProvider with ChangeNotifier {
     ),
     const User(
       uid: 'hornados',
+      userType: UserType.venue,
       username: 'donDieguito',
       displayName:
           'Hornados Don Dieguito de los mejores que probaras en la vida wow que rico',
@@ -92,6 +96,7 @@ class MatchProvider with ChangeNotifier {
     ),
     const User(
       uid: 'vlnPub',
+      userType: UserType.venue,
       username: 'villainPub',
       displayName: 'Villain Pub',
       email: 'bowser@villainpub.com',
@@ -117,6 +122,7 @@ class MatchProvider with ChangeNotifier {
     ),
     const User(
       uid: 'jmommas',
+      userType: UserType.venue,
       username: 'jmommas',
       displayName: 'joeMommas',
       email: 'joe@momma.sofat',
@@ -171,6 +177,7 @@ class MatchProvider with ChangeNotifier {
     return const User(
       uid: '',
       username: '',
+      userType: UserType.venue,
       displayName: '',
       email: '',
       bio: '',

@@ -5,6 +5,7 @@ import 'package:livit/models/user.dart';
 class UserProvider with ChangeNotifier {
   User? _user = const User(
     uid: 'joeMomma42069',
+    userType: UserType.artist,
     username: 'saullyG',
     displayName: 'Slippin\' Jimmy',
     email: 'callSaul@saul.com',
