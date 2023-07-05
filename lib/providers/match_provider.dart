@@ -66,7 +66,8 @@ class MatchProvider with ChangeNotifier {
     const User(
       uid: 'hornados',
       username: 'donDieguito',
-      displayName: 'Hornados Don Dieguito',
+      displayName:
+          'Hornados Don Dieguito de los mejores que probaras en la vida wow que rico',
       email: 'dieguito@hornados.com',
       bio: 'Tasty hornado',
       photoUrl:
