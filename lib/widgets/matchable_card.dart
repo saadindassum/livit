@@ -45,18 +45,20 @@ class MatchableCard extends StatelessWidget {
               ),
               //Text
               Container(
+                width: SizeConfig.blockSizeHorizontal! * 50,
                 padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     DefaultTextStyle(
-                        style: ubuntu.copyWith(
-                          fontSize: 20,
-                        ),
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        child: Text(match.getDisplayName())),
+                      style: ubuntu.copyWith(
+                        fontSize: 20,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                      child: Text(match.getDisplayName()),
+                    ),
                     Container(
                         padding: const EdgeInsets.fromLTRB(0, 10, 0, 5),
                         child:
@@ -68,6 +70,7 @@ class MatchableCard extends StatelessWidget {
           ),
           Icon(
             matchTypeIcon,
+            size: 32,
             color: matchTypeColor,
           ),
         ],
