@@ -9,7 +9,7 @@ class EventProvider with ChangeNotifier {
       open: true,
       eid: '42069owl',
       hostID: 'lsCustoms',
-      eventName: 'Car Fest',
+      eventName: 'Car Fest the coolest ever oh holy shit cars cars cars',
       dateTime: DateTime(2023, 4, 20, 4, 20),
       photoUrl:
           'https://www.teenagecancertrust.org/sites/default/files/styles/16_9_media_huge/public/2022-11/20220826_CarFest_South_2022_Friday_Main_Stage_James_Blunt_028.JPG?h=82f92a78&itok=z3ZEXcw7',

@@ -66,29 +66,38 @@ class ExploreScreen extends StatelessWidget with WidgetsBindingObserver {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          DefaultTextStyle(
-                            style: ubuntu.copyWith(
-                              fontSize: SizeConfig.title,
-                              color: kTangerine,
+                      SizedBox(
+                        width: SizeConfig.blockSizeHorizontal! * 57,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            DefaultTextStyle(
+                              style: ubuntu.copyWith(
+                                fontSize: SizeConfig.title,
+                                color: kTangerine,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              child: Text(
+                                context
+                                    .watch<EventProvider>()
+                                    .nextMatchingEvent
+                                    .eventName,
+                                maxLines: 1,
+                              ),
                             ),
-                            child: Text(context
-                                .watch<EventProvider>()
-                                .nextMatchingEvent
-                                .eventName),
-                          ),
-                          DefaultTextStyle(
-                            style: ubuntu.copyWith(
-                              fontSize: SizeConfig.subtitle,
+                            DefaultTextStyle(
+                              style: ubuntu.copyWith(
+                                fontSize: SizeConfig.subtitle,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              child: Text(
+                                '${DateFormat('EEEE').format(context.watch<EventProvider>().nextMatchingEvent.dateTime)} ${formatter.format(context.watch<EventProvider>().nextMatchingEvent.dateTime)}',
+                                maxLines: 1,
+                              ),
                             ),
-                            child: Text(
-                              '${DateFormat('EEEE').format(context.watch<EventProvider>().nextMatchingEvent.dateTime)} ${formatter.format(context.watch<EventProvider>().nextMatchingEvent.dateTime)}',
-                            ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                       //if host has logo, display logo. If not, name
                       (logoUrl == '')

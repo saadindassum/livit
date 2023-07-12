@@ -9,7 +9,7 @@ class SizeConfig {
 
   //Text sizes
   static double title = 50;
-  static double subtitle = 32;
+  static double subtitle = 29;
   static double paragraph = 20;
 
   static void init(BuildContext context) {
